@@ -1,0 +1,34 @@
+{
+	"root": true,
+	"project": {
+		"name": "Jess Portfolio"
+	},
+	"api": {
+		"projectId": "xevlvvc4",
+		"dataset": "production"
+	},
+	"plugins": ["@sanity/base", "@sanity/default-layout", "@sanity/default-login", "@sanity/desk-tool", "media", "@sanity/vision", "@sanity/color-input", "url-metadata-input"],
+	"env": {
+		"development": {
+			"plugins": ["@sanity/vision"]
+		}
+	},
+	"parts": [
+		{
+			"name": "part:@sanity/base/schema",
+			"path": "./schemas/schema"
+		},
+		{
+			"implements": "part:@sanity/base/root",
+			"path": "plugins/sanity-plugin-tutorial/CustomDefaultLayout"
+		},
+		{
+			"implements": "part:@sanity/form-builder/input/image/asset-sources",
+			"path": "./parts/assetSources.js"
+		},
+		{
+			"implements": "part:@sanity/form-builder/input/file/asset-sources",
+			"path": "./parts/assetSources.js"
+		}
+	]
+}
